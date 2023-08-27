@@ -1,0 +1,11 @@
+# IDEs
+/.idea/
+/.vs/
+/.vscode/
+
+# Build output
+bin/
+obj/
+
+# Tanzu Application Platform k8s config
+tap-config
