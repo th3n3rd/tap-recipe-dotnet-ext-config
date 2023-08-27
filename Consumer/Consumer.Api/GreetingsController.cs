@@ -4,11 +4,29 @@ namespace Consumer.Api;
 
 [ApiController]
 [Route("/")]
-public class HelloWorldController : ControllerBase
+public class GreetingsController : ControllerBase
 {
-    [HttpGet]
-    public IActionResult Get()
+    private readonly EncodingApiClient _encodingApiClient;
+
+    public GreetingsController(EncodingApiClient encodingApiClient)
     {
-        return Ok("Hello World!");
+        _encodingApiClient = encodingApiClient;
+    }
+
+    [HttpGet]
+    public async Task<IActionResult> Get()
+    {
+        var original = "Hello World!";
+        return Ok(new GreetingResponse
+        {
+            Original = original,
+            Encoded = await _encodingApiClient.Encode(original)
+        });
+    }
+
+    private class GreetingResponse
+    {
+        public string Original { get; set; }
+        public string Encoded { get; set; }
     }
 }

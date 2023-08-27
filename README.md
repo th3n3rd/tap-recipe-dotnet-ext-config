@@ -6,7 +6,7 @@ This repository is used as a playground to experiment with Tanzu Application Pla
 ## TODOs
 
 - [x] Setup two basic workloads, a consumer and a provider (for now independent)
-- [ ] Integrates consumer and provider (hardcoded configuration)
+- [x] Integrates consumer and provider (hardcoded configuration)
 - [ ] Externalise consumer configuration
     - [ ] Leverage SteelToe configuration extensions to read from Kubernetes ConfigMaps and Secrets
     - [ ] Setup a Spring Config Server and leverage SteelToe configuration extensions to read from it
