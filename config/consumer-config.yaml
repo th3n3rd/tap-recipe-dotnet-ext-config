@@ -1,0 +1,7 @@
+---
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: consumer.api
+data:
+  EncodingApi__Uri: http://provider.apps.svc.cluster.local

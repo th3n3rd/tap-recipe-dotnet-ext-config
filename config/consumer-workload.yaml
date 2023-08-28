@@ -15,6 +15,11 @@ spec:
     - name: annotations
       value:
         autoscaling.knative.dev/min-scale: "1"
+  env:
+    - name: "Spring__Cloud__Kubernetes__Namespace"
+      value: "apps"
+    - name: "Spring__Cloud__Config__FailFast"
+      value: "true"
   source:
     git:
       url: https://github.com/th3n3rd/tap-recipe-dotnet-ext-config.git
